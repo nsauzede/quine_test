@@ -1,0 +1,9 @@
+PY:=python
+
+all:
+	@echo -n "C: " ; $(CC) quine.c -o quine_c > /dev/null 2>&1 && ./quine_c > quine_c.c && diff quine.c quine_c.c > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose"
+	@echo -n "PY: " ; $(PY) quine.py > quine_py.py && diff quine.py quine_py.py > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose"
+
+clean:
+	@$(RM) quine_c quine_c.c
+	@$(RM) quine_py.py
