@@ -152,7 +152,7 @@ int main(int argc, char *argv[]) {
 -->
 
 # Super Quine
-Welcome to the Quinception
+Welcome to Quinception
 
 Welcome to the FrankenQuine
 
@@ -170,20 +170,14 @@ is the actual "compiler"/language chosen to process the input file.
 
 ## How to test it ?
 
-### Makefile
+### Markdown
+Obviously, this very file you are currently reading is a valid `Markdown` document.
+
 ```shell
-$ make -f README.md clean check2
-[ check2 ] : make !!
-[ check2 ] : Shell !!
-[ check2 ] : python !!
-[ check2 ] : C !!
-[ check2 ] : C++ !!
+$ grep -e '\\`Markdown\\`' README.md
+Obviously, this very file you are currently reading is a valid \`Markdown\` document.
 $ 
 ```
-Great!
-
-This proves that this file is not only the `markdown` document you are currently reading, it is also a `Makefile`.
-
 But wait, there is more..
 
 ### Shell (sh, bash)
@@ -226,6 +220,20 @@ echo 'C++: Hello, Shell!'
 $ 
 ```
 Nice, a `C++` source too;
+
+Are we done yet ? Not quite..
+
+### Makefile
+```shell
+$ make -f README.md clean check2
+[ check2 ] : make !!
+[ check2 ] : Shell !!
+[ check2 ] : python !!
+[ check2 ] : C !!
+[ check2 ] : C++ !!
+$ 
+```
+Great! It is also a `Makefile`.
 
 <!---
 //'''
