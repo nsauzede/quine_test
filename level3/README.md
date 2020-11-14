@@ -121,13 +121,9 @@ _=''''
 
 #define endif
 
-#if 1
 extern void *hybrid0;
 asm(".data\n.extern _Z6hybridv\n.globl hybrid0\nhybrid0: .quad _Z6hybridv");
 void _Z6hybridv(){}
-#else
-void hybrid0(){}
-#endif
 int check = 0;
 const char *s[][2] = {
 {"print('C: Hello, Python!')","C !!"},
