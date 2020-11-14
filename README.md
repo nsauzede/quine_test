@@ -41,3 +41,15 @@ compile it separately as C and C++ and run both : former produces a eg: shell sc
 A -+-C++-> B=SH
    \--C--> C=PY
 ```
+
+## Level4 : Frankenquine ? Quinea pig ? Superquine ? Quinception ?
+Try to split parallel ways from a single file, but converging back to the same source,
+eventually.
+
+Eg: Start from a c/++ hybrid source file A (which means a single file contains multiple languages),
+compile it separately as C and C++ and run both : former produces a shell script, the latter a Python script:
+
+```
+A -+-C++-> B=SH --+-> A
+   \--C--> C=PY --/
+```

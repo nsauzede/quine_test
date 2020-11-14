@@ -1,2 +1,3 @@
+//V: Hello, V!
 import strconv
-a:='import strconv%ca:=%c%s%cc:=char(10)q:=char(39)strconv.v_printf(a,c,q,a,q,c)%c'c:=char(10)q:=char(39)strconv.v_printf(a,c,q,a,q,c)
+a:='//V: Hello, V!%cimport strconv%ca:=%c%s%cc:=char(10)q:=char(39)strconv.v_printf(a,c,c,q,a,q,c)%c'c:=char(10)q:=char(39)strconv.v_printf(a,c,c,q,a,q,c)
