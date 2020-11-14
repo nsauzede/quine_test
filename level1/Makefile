@@ -2,6 +2,7 @@ PY:=python
 PL:=perl
 V:=v
 RS:=rustc
+SH:=sh
 
 all:
 	@echo -n "C: " ; $(CC) quine.c -o quine_c > /dev/null 2>&1 && ./quine_c > quine_c.c && diff quine.c quine_c.c > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose"
@@ -9,6 +10,7 @@ all:
 	@echo -n "PL: " ; $(PL) quine.pl > quine_pl.pl && diff quine.pl quine_pl.pl > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose"
 	@echo -n "V: " ; $(V) run quine.v > quine_v.v && diff quine.v quine_v.v > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose"
 	@echo -n "RS: " ; $(RS) quine.rs -o quine_rs && ./quine_rs > quine_rs.rs && diff quine.rs quine_rs.rs > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose"
+	@echo -n "SH: " ; $(SH) quine.sh > quine_sh.sh && diff quine.sh quine_sh.sh > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose"
 
 clean:
 	@$(RM) quine_c quine_c.c
@@ -16,3 +18,4 @@ clean:
 	@$(RM) quine_pl.pl
 	@$(RM) quine quine_v.v
 	@$(RM) quine_rs quine_rs.rs
+	@$(RM) quine_sh.sh
