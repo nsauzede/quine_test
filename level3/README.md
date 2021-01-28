@@ -197,6 +197,7 @@ Ok, so it is also a `Python` source.
 ### Perl (5)
 ```shell
 $ perl -x README.md
+$a="%ca=%c%s%c;printf(%ca,36,34,%ca,34,36,36,10);%c";printf($a,36,34,$a,34,36,36,10);
 $ 
 ```
 Fine, a `Perl` source too..
@@ -222,11 +223,12 @@ Are we done yet ? Not quite..
 ### Makefile
 ```shell
 $ make -f README.md clean check2
-[ check2 ] : make !!
-[ check2 ] : Shell !!
-[ check2 ] : python !!
-[ check2 ] : C !!
-[ check2 ] : C++ !!
+[ check_mk ] : make !!
+[ check_sh ] : Shell !!
+[ check_py ] : python !!
+[ check_pl ] : Perl !!
+[ check_c ] : C !!
+[ check_cxx ] : C++ !!
 $ 
 ```
 Great! It is also a `Makefile`.
