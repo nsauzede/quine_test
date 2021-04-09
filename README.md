@@ -57,3 +57,10 @@ compile it separately as C and C++ and run both : former produces a shell script
 A -+-C++-> B=SH --+-> A
    \--C--> C=PY --/
 ```
+
+## Level2+
+Add a 3rd language in the loop of Level2, this time with language : V, C and Python.
+
+Start with V which produces a C, which produces a Python, which produce V back again.
+V => C => PY => V..
+
