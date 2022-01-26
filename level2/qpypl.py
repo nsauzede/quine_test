@@ -1,0 +1,1 @@
+py='py=%c%s%c;pl=%c%s%c;print(pl%%(39,pl,39,39,py,39),end="")';pl='$pl=%c%s%c;$py=%c%s%c;printf($py,39,$py,39,39,$pl,39)';print(pl%(39,pl,39,39,py,39),end="")

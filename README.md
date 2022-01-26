@@ -31,6 +31,10 @@ which when run produces the initial C file again:
 $ cc a.c -o a_c && ./a_c | python > b.c && diff a.c b.c && echo "QUINE!!" || echo "You lose"
 ```
 
+But that naive C<=>PY example is "cheating", eg: unrolling the loop once, and hence is not scalable beyond two languages.
+
+A smarter example is the PL<=>PY example, that separate the two language loops, and thus can be scaled to more than two.
+
 ## Level3 : hybrid contents ? (non-quine)
 Try to split parallel ways to process a single file to different outputs
 
