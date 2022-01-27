@@ -1,1 +1,4 @@
-main(){char*c="main(){char*c=%c%s%c,*py=%c%s%c,*v=%c%s%c;printf(py,39,py,39,39,v,39,39,c,39,34,34);}",*py="py=%c%s%c;v=%c%s%c;c=%c%s%c;print(v%%(39,v,39,39,c,39,39,py,39),end=%c%c)",*v="v:=%c%s%cc:=%c%s%cpy:=%c%s%cC.printf(c.str,34,c.str,34,34,py.str,34,34,v.str,34)";printf(py,39,py,39,39,v,39,39,c,39,34,34);}
+main(){char*c="main(){char*c=%c%s%c,%c*py=%c%s%c,%c*v=%c%s%c;%cprintf(py,39,py,39,10,39,v,39,10,39,c,39,10,10);}%c",
+*py="py=%c%s%c%cv=%c%s%c%cc=%c%s%c%cprint(v%%(39,v,39,10,39,c,39,10,39,py,39,10))%c",
+*v="v:=%c%s%c%cc:=%c%s%c%cpy:=%c%s%c%cC.printf(c.str,34,c.str,34,10,34,py.str,34,10,34,v.str,34,10,10)";
+printf(py,39,py,39,10,39,v,39,10,39,c,39,10,10);}
