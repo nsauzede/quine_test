@@ -1,6 +1,7 @@
 PY:=python
 PL:=perl
 V:=v
+NELUA:=nelua
 
 all:
 	@echo -n "C -> PY" && $(CC) quine.c -o a > /dev/null 2>&1 && ./a > quine.py && echo "" || false
@@ -28,5 +29,11 @@ all:
 	@echo -n "PY -> V" && $(PY) qpyvc2.py > qvcpy2.v && echo "" || false
 	@diff qvcpy.v qvcpy2.v > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose"
 
+	@echo -n "NE -> PY" && $(NELUA) qnepyvc.nelua > qpyvcne2.py && echo "" || false
+	@echo -n "PY -> V" && $(PY) qpyvcne2.py > qvcnepy2.v && echo "" || false
+	@echo -n "V -> C" && $(V) run qvcnepy2.v > qcnepyv2.c && echo "" || false
+	@echo -n "C -> NE" && $(CC) qcnepyv2.c -o a > /dev/null 2>&1 && ./a > qnepyvc2.nelua && echo "" || false
+	@diff qnepyvc.nelua qnepyvc.nelua > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose"
+
 clean:
-	@$(RM) a quine.py quine2.c qplpy2.pl qpypl2.py qvc2.v qcv2.c qcpyv2.c qpyvc2.py qvcpy2.v
+	@$(RM) a quine.py quine2.c qplpy2.pl qpypl2.py qvc2.v qcv2.c qcpyv2.c qpyvc2.py qvcpy2.v qpyvcne2.py qvcnepy2.v qcnepyv2.c qnepyvc2.nelua
