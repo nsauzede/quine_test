@@ -1,0 +1,1 @@
+v:='v:=%c%s%cc:=%c%s%cC.printf(c.str,34,c.str,34,34,v.str,34)'c:='main(){char*c=%c%s%c,*v=%c%s%c;printf(v,39,v,39,39,c,39);}'C.printf(c.str,34,c.str,34,34,v.str,34)
