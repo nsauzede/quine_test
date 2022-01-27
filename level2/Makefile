@@ -23,5 +23,10 @@ all:
 	@echo -n "C -> V" && $(CC) qcv2.c -o a > /dev/null 2>&1 && ./a > qvc2.v && echo "" || false
 	@diff qvc.v qvc2.v > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose"
 
+	@echo -n "V -> C" && $(V) run qvcpy.v > qcpyv2.c && echo "" || false
+	@echo -n "C -> PY" && $(CC) qcpyv2.c -o a > /dev/null 2>&1 && ./a > qpyvc2.py && echo "" || false
+	@echo -n "PY -> V" && $(PY) qpyvc2.py > qvcpy2.v && echo "" || false
+	@diff qvcpy.v qvcpy2.v > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose"
+
 clean:
-	@$(RM) a quine.py quine2.c qplpy2.pl qpypl2.py qvc2.v qcv2.c
+	@$(RM) a quine.py quine2.c qplpy2.pl qpypl2.py qvc2.v qcv2.c qcpyv2.c qpyvc2.py qvcpy2.v
