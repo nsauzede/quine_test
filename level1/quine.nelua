@@ -1,0 +1,1 @@
+require'C.stdio'local s="require'C.stdio'local s=%c%s%c C.printf(s,34,s,34,10)%c" C.printf(s,34,s,34,10)
