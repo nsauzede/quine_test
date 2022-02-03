@@ -41,6 +41,14 @@ Add a 3rd language in the loop of Level2, this time with language : V, C and Pyt
 Start with V which produces a C, which produces a Python, which produce V back again.
 V => C => PY => V..
 
+Already done:
+- Perl/Python (2 lang)
+- V/C/Python (3 lang)
+- Nelua/Python/V/C (4 lang)
+
+Idea: make another quine-relay using only languages not already used by mame.
+Eg: Nelua, V, Odin, Zig, VHDL, WAT, RPL, ..
+
 ## Level3 : hybrid contents ? (non-quine)
 Try to split parallel ways to process a single file to different outputs
 
