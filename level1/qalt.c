@@ -1,1 +1,1 @@
-main(i){char*s="main(i){char*s=;for(i=0;i<strlen(s);i++){if(i==15){putchar(34);printf(s);putchar(34);}putchar(s[i]);}}";for(i=0;i<strlen(s);i++){if(i==15){putchar(34);printf(s);putchar(34);}putchar(s[i]);}}
+int main(i){char*s="int main(i){char*s=;for(i=0;i<strlen(s);i++){if(i==15){putchar(34);printf(s);putchar(34);}putchar(s[i]);}}";for(i=0;i<strlen(s);i++){if(i==15){putchar(34);printf(s);putchar(34);}putchar(s[i]);}}

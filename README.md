@@ -71,3 +71,12 @@ compile it separately as C and C++ and run both : former produces a shell script
 A -+-C++-> B=SH --+-> A
    \--C--> C=PY --/
 ```
+
+## Level5 : Polyquine
+Write a short, single polyglot quine file with two languages A and B(eg: C and Python), such that when run as
+either language A or B, outputs the same, full polyglot source file again (containing both A and B languages).
+
+```
+A+B -+--A--+-> A+B
+     \--B--/
+```
