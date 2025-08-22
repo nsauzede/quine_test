@@ -1,11 +1,17 @@
-#include <stdio.h>/*
-'''*/
-char *
-/*'''#*/
-s="#include <stdio.h>/*%c'''*/%cchar *%c/*'''#*/%cs=%c%s%c;%c#if 1/*%c'''*/%cint main(void){printf(s,10,10,10,10,34,s,34,10,10,10,10,10,10,10);}%c#endif/*'''%cprint(s%%(10,10,10,10,34,s,34,10,10,10,10,10,10,10),end='')%c#*/%c";
-#if 1/*
-'''*/
-int main(void){printf(s,10,10,10,10,34,s,34,10,10,10,10,10,10,10);}
-#endif/*'''
-print(s%(10,10,10,10,34,s,34,10,10,10,10,10,10,10),end='')
-#*/
+///bin/true : or false ? # \
+_="It\'s a bird... It's a plane... It's..._ \
+<!--"
+#if 0
+_=''''
+///bin/false : none
+# Shell
+echo "Shell !!"
+exit 0
+//'''
+#endif
+
+#define p(_)char*s;int main(void){printf(s,10,10,10,36,36,36,10,34,s,34,10);}char*s=_/*
+def p(s):print(s%(10,10,10,36,36,36,10,34,s,34,10),end='');'''
+#!perl
+sub p{$s=shift;printf($s,10,10,10,36,36,36,10,34,$s,34,10);}#'''#*/
+p("#define p(_)char*s;int main(void){printf(s,10,10,10,36,36,36,10,34,s,34,10);}char*s=_/*%cdef p(s):print(s%%(10,10,10,36,36,36,10,34,s,34,10),end='');'''%c#!perl%csub p{%cs=shift;printf(%cs,10,10,10,36,36,36,10,34,%cs,34,10);}#'''#*/%cp(%c%s%c);%c");

@@ -1,19 +1,28 @@
 clear
-Q=pqmini3
-#Q=pqmini30
+Q=pqmini
+#COPT="-x c -include stdio.h -pedantic -Wall -Werror -std=c99"
+COPT="-x c -include stdio.h"
 for cc in tcc gcc clang; do
     echo "cc=$cc"
-    $cc -include stdio.h -pedantic -Wall -Werror -std=c99 -x c ${Q}.txt >& /dev/null && (
+    $cc ${COPT} ${Q}.txt >& /dev/null && (
         diff -q ${Q}.txt <(./a.out) > /dev/null && echo "---- $cc ${Q}_c.c QUINE! ----" || echo "---- $cc ${Q}_c.c YOU LOOSE!!! ----"
+        #diff -u ${Q}.txt <(./a.out)
     )
 done
 
-diff -q ${Q}.txt <(python ${Q}.txt) >& /dev/null && echo "---- py QUINE! ----" || echo "---- py YOU LOOSE!!! ----"
-diff -u ${Q}.txt <(python ${Q}.txt)
-#python ${Q}.txt
+PYOPT="-x"
+diff -q ${Q}.txt <(python ${PYOPT} ${Q}.txt) >& /dev/null && echo "---- py QUINE! ----" || echo "---- py YOU LOOSE!!! ----"
+#diff -u ${Q}.txt <(python ${PYOPT} ${Q}.txt)
+#python ${PYOPT} ${Q}.txt
 
-#cat a.pl;echo "-------";perl -x a.pl
-#diff -q a.pl <(perl -x a.pl) >& /dev/null && echo "---- perl QUINE! ----" || echo "---- perl YOU LOOSE! ----"
-#diff -u a.pl <(perl -x a.pl)
+PLOPT="-x"
+#diff -q ${Q}.txt <(perl ${PLOPT} ${Q}.txt) >& /dev/null && echo "---- perl QUINE! ----" || echo "---- perl YOU LOOSE! ----"
+#diff -u ${Q}.txt <(perl ${PLOPT} ${Q}.txt)
 
-diff -q ${Q}.txt <(perl -x ${Q}.txt) >& /dev/null && echo "---- pl QUINE! ----" || echo "---- pl YOU LOOSE!!! ----"
+diff -q ${Q}.txt <(perl ${PLOPT} ${Q}.txt) >& /dev/null && echo "---- pl QUINE! ----" || echo "---- pl YOU LOOSE!!! ----"
+
+SHOPT=""
+diff -q ${Q}.txt <(sh ${SHOPT} ${Q}.txt) >& /dev/null && echo "---- sh QUINE! ----" || echo "---- sh YOU LOOSE!!! ----"
+diff -u ${Q}.txt <(sh ${SHOPT} ${Q}.txt)
+
+du -b ${Q}.txt
