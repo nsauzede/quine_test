@@ -1,0 +1,64 @@
+///bin/true : or false ? # \
+_="It\'s a bird... It's a plane... It's..._ \
+<!--"
+#if 0
+_=''''
+///bin/false : none
+# Shell
+cprintf() {
+    fmtvar=$1
+    shift
+    fmt=$(eval "echo $(printf '%s' "$" )$fmtvar")
+
+    i=0
+    len=$(printf %s "$fmt" | wc -c)
+
+    while [ $i -lt $len ]; do
+        ch=$(printf %s "$fmt" | cut -c $((i+1)))
+        if [ "$ch" = "%" ]; then
+            i=$((i+1))
+            spec=$(printf %s "$fmt" | cut -c $((i+1)))
+            arg=$1; shift
+            case "$spec" in
+                s)
+                    printf %s "$arg"
+                    ;;
+                c)
+                    case $arg in
+                        ''|*[!0-9]*) printf %s "$arg" ;;
+                        *) printf "\\$(printf '%03o' "$arg")" ;;
+                    esac
+                    ;;
+                d)
+                    printf %s "$arg"
+                    ;;
+                *)
+                    printf '%%%s' "$spec"
+                    ;;
+            esac
+        else
+            printf %s "$ch"
+        fi
+        i=$((i+1))
+    done
+}
+p(){
+cprintf s 10 34 "$s" 34 10 10
+exit 0
+}
+_=<<"#*/"
+//'''
+#endif
+#define s char*z
+#define p
+#define q() ;int main(void){printf(z,10,34,z,34,10,10);}/*
+def p():print("hello\n");
+def q():print(s%(10,34,s,34,10,10),end='');import sys;sys.exit(1);'''
+#!perl
+sub q{exit 1;}
+sub p{printf($s,10,34,$s,34,10,10);exit 2;}$
+#'''
+#*/
+s="hello%cs=%c%s%c;%cworld%c";
+p
+q();

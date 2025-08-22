@@ -1,0 +1,13 @@
+clear
+Q=pqmini2
+for cc in tcc gcc clang; do
+    echo "cc=$cc"
+    $cc -include stdio.h -pedantic -Wall -Werror -std=c99 -x c ${Q}.txt >& /dev/null && (
+        diff -q ${Q}.txt <(./a.out) > /dev/null && echo "---- $cc ${Q}_c.c QUINE! ----" || echo "---- $cc ${Q}_c.c YOU LOOSE!!! ----"
+    )
+done
+
+diff -q ${Q}.txt <(python ${Q}.txt) >& /dev/null && echo "---- py QUINE! ----" || echo "---- py YOU LOOSE!!! ----"
+diff -u ${Q}.txt <(python ${Q}.txt)
+#python ${Q}.txt
+du -b ${Q}.txt

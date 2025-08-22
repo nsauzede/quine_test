@@ -1,0 +1,44 @@
+#if 0
+_=''''
+cpr(){
+f=$1
+shift
+f=$(eval "echo $(printf '%s' "$" )$f")
+i=0
+l=$(printf %s "$f" | wc -c)
+while [ $i -lt $l ]; do
+c=$(printf %s "$f" | cut -c $((i+1)))
+if [ "$c" = "%" ]; then
+i=$((i+1))
+s=$(printf %s "$f" | cut -c $((i+1)))
+a=$1; shift
+case "$s" in
+s)printf %s "$a";;
+c)case $a in ''|*[!0-9]*) printf %s "$a" ;;
+*) printf "\\$(printf '%03o' "$a")" ;;
+esac
+;;
+esac
+else
+printf %s "$c"
+fi
+i=$((i+1))
+done
+}
+p(){
+cpr s 34 "$s" 34 10;exit 0
+};_=<<"#*/"
+'''
+#endif
+#define p
+#define q()
+#define s char*z;int main(void){printf(z,34,z,34,10);}char*z/*
+import sys;p=0
+def q():print(s%(34,s,34,10),end='');sys.exit(1);'''
+#!perl
+sub q{}sub p{printf($s,34,$s,34,10);exit 2;}$
+#'''
+#*/
+s="hello s=%c%s%c; world%c";
+p
+q();

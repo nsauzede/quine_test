@@ -1,19 +1,35 @@
 clear
-Q=pqmini3
-#Q=pqmini30
+Q=pqmini
+COPT="-x c -pedantic -Wall -Werror -std=c99"
+#COPT="-x c"
 for cc in tcc gcc clang; do
     echo "cc=$cc"
-    $cc -include stdio.h -pedantic -Wall -Werror -std=c99 -x c ${Q}.txt >& /dev/null && (
-        diff -q ${Q}.txt <(./a.out) > /dev/null && echo "---- $cc ${Q}_c.c QUINE! ----" || echo "---- $cc ${Q}_c.c YOU LOOSE!!! ----"
+    $cc ${COPT} ${Q}.txt >& /dev/null && (
+        out=`sh ${SHOPT} ${Q}.txt`
+        diff -q ${Q}.txt <(echo $out) > /dev/null && echo "---- $cc ${Q}_c.c QUINE! ----" || echo "---- `echo $out|md5sum` $cc ${Q}_c.c YOU LOOSE!!! ----"
+        #diff -u ${Q}.txt <(echo $out)
+        echo $out
     )
 done
 
-diff -q ${Q}.txt <(python ${Q}.txt) >& /dev/null && echo "---- py QUINE! ----" || echo "---- py YOU LOOSE!!! ----"
-diff -u ${Q}.txt <(python ${Q}.txt)
-#python ${Q}.txt
+PYOPT="-x"
+out=`python ${PYOPT} ${Q}.txt`
+diff -q ${Q}.txt <(echo $out) >& /dev/null && echo "---- py QUINE! ----" || echo "---- `echo $out|md5sum` py YOU LOOSE!!! ----"
+#diff -u ${Q}.txt <(echo $out)
+echo $out
 
-#cat a.pl;echo "-------";perl -x a.pl
-#diff -q a.pl <(perl -x a.pl) >& /dev/null && echo "---- perl QUINE! ----" || echo "---- perl YOU LOOSE! ----"
-#diff -u a.pl <(perl -x a.pl)
+PLOPT="-x"
+out=`perl ${PLOPT} ${Q}.txt`
+diff -q ${Q}.txt <(echo $out) >& /dev/null && echo "---- perl QUINE! ----" || echo "---- `echo $out|md5sum` perl YOU LOOSE! ----"
+#diff -u ${Q}.txt <(echo $out)
+echo $out
 
-diff -q ${Q}.txt <(perl -x ${Q}.txt) >& /dev/null && echo "---- pl QUINE! ----" || echo "---- pl YOU LOOSE!!! ----"
+#diff -q ${Q}.txt <(echo $out) >& /dev/null && echo "---- pl QUINE! ----" || echo "---- `echo $out|md5sum` pl YOU LOOSE!!! ----"
+
+SHOPT=""
+out=`sh ${SHOPT} ${Q}.txt`
+diff -q ${Q}.txt <(echo $out) >& /dev/null && echo "---- sh QUINE! ----" || echo "---- `echo $out|md5sum` sh YOU LOOSE!!! ----"
+#diff -u ${Q}.txt <(echo $out)
+echo $out
+
+du -b ${Q}.txt
