@@ -1,0 +1,5 @@
+#define p(_)char*s;int main(void){printf(s,10,10,10,36,36,36,10,34,s,34,10);}char*s=_/*
+def p(s):print(s%(10,10,10,36,36,36,10,34,s,34,10),end='');'''
+#!perl
+sub p{$s=shift;printf($s,10,10,10,36,36,36,10,34,$s,34,10);}#'''#*/
+p("#define p(_)char*s;int main(void){printf(s,10,10,10,36,36,36,10,34,s,34,10);}char*s=_/*%cdef p(s):print(s%%(10,10,10,36,36,36,10,34,s,34,10),end='');'''%c#!perl%csub p{%cs=shift;printf(%cs,10,10,10,36,36,36,10,34,%cs,34,10);}#'''#*/%cp(%c%s%c);%c");
