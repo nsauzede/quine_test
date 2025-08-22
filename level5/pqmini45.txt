@@ -1,0 +1,17 @@
+#include<stdio.h>/*
+_='''';cpr(){ f=$1;shift;f=$(eval 'printf %s "$'"$f"'"');i=0;l=$(printf %s "$f"|wc -c)
+while [ $i -lt $l ];do c=$(printf %s "$f"|cut -c $((i+1)));if [ "$c" = "%" ];then
+i=$((i+1));s=$(printf %s "$f"|cut -c $((i+1)));a=$1;shift;case "$s" in s)printf %s "$a";;
+c)case $a in ''|*[!0-9]*)printf %s "$a";;*)printf "\\$(printf '%03o' "$a")";;esac;;esac else
+printf %s "$c";fi;i=$((i+1));done };a(){ cpr s 34 "$s" 34 10 10 10;exit 0;};_=<<"#define a"
+''';import sys;a=0
+def b():print(s%(34,s,34,10,10,10),end='');sys.exit(0);'''
+#!perl
+sub a{}sub b{printf($s,34,$s,34,10,10,10);exit 0;}$
+#'''#*/
+#define a
+#define s char*z
+#define b()int main(void){enum{q=34,d=36,p=37,b=92,n=10};printf(z,q,z,q,n,n,n);}
+s="s=%c%s%c;%ca%cb()%c";
+a
+b()

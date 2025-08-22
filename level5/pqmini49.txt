@@ -1,0 +1,15 @@
+#include<stdio.h>/*
+_=''''
+p(){ printf %s "$1";};h(){ p "$1"|cut -c $2;};o(){ printf "\\$(printf %03o "$1")";};i(){ i=$((i+1));};c(){ f=$1;shift;f=$(eval 'p "$'"$f"'"');i=0;l=$(p "$f"|wc -c);while [ $i -lt $l ];do i;c=$(h "$f" $i);if [ "$c" = "%" ];then i;s=$(h "$f" $i);case $s in s)a=$1;shift;p "$a";;c)a=$1;shift;eval v="\${$a}";case $v in ''|*[!0-9]*)p "$v";;*)o "$v";;esac;;%)p %;;esac;else p "$c";fi;done;}
+a(){ n=10 q=34 d=36 B=92 c s q d q q d q d q B B d q d q q d n q d q q q n n n n d d d n n n n n q "$s" q n n n;exit 0;};_=<<"#define a"
+''';import sys;a,q,d,B=10,34,36,92
+def b():print(s%(q,d,q,q,d,q,d,q,B,B,d,q,d,q,q,d,a,q,d,q,q,q,a,a,a,a,d,d,d,a,a,a,a,a,q,s,q,a,a,a),end='');sys.exit(0);'''
+#!perl
+sub a{10}sub Q{34}sub d{36}sub B{92}sub b{printf($s,Q,d,Q,Q,d,Q,d,Q,B,B,d,Q,d,Q,Q,d,a,Q,d,Q,Q,Q,a,a,a,a,d,d,d,a,a,a,a,a,Q,$s,Q,a,a,a);exit 0;}$
+#'''#*/
+#define a
+#define s char*z
+#define b()int main(void){enum{q=34,d=36,B=92,n=10};printf(z,q,d,q,q,d,q,d,q,B,B,d,q,d,q,q,d,n,q,d,q,q,q,n,n,n,n,d,d,d,n,n,n,n,n,q,z,q,n,n,n);}
+s="p(){ printf %%s %c%c1%c;};h(){ p %c%c1%c|cut -c %c2;};o(){ printf %c%c%c%c(printf %%03o %c%c1%c)%c;};i(){ i=%c((i+1));};%ca(){ n=10 q=34 d=36 B=92 c s q d q q d q d q B B d q d q q d n q d q q q n n n n d d d n n n n n q %c%cs%c q n n n;exit 0;};_=<<%c#define a%c%c''';import sys;a,q,d,B=10,34,36,92%cdef b():print(s%%(q,d,q,q,d,q,d,q,B,B,d,q,d,q,q,d,a,q,d,q,q,q,a,a,a,a,d,d,d,a,a,a,a,a,q,s,q,a,a,a),end='');sys.exit(0);'''%c#!perl%csub a{10}sub Q{34}sub d{36}sub B{92}sub b{printf(%cs,Q,d,Q,Q,d,Q,d,Q,B,B,d,Q,d,Q,Q,d,a,Q,d,Q,Q,Q,a,a,a,a,d,d,d,a,a,a,a,a,Q,%cs,Q,a,a,a);exit 0;}%c%c#'''#*/%c#define a%c#define s char*z%c#define b()int main(void){enum{q=34,d=36,B=92,n=10};printf(z,q,d,q,q,d,q,d,q,B,B,d,q,d,q,q,d,n,q,d,q,q,q,n,n,n,n,d,d,d,n,n,n,n,n,q,z,q,n,n,n);}%cs=%c%s%c;%ca%cb()%c";
+a
+b()

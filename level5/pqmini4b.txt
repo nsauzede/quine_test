@@ -1,0 +1,9 @@
+#include<stdio.h>/*
+_='''';p(){ printf %s "$1";};c(){ p "$1"|cut -c "$2";};o(){ printf "\\$(printf %03o "$1")";};P(){ S=$1;T=$2;i=0;j=1;l=$(p "$S"|wc -c);while [ $i -lt $l ];do i=$((i+1));x=$(c "$S" $i);if [ "$x" = "%" ];then i=$((i+1));y=$(c "$S" $i);case $y in s)p "$S";j=$((j+1));;c)t=$(c "$T" $j);j=$((j+1));case $t in b)p '\';;q)p '"';;d)p '$';;n)o 10;;esac;;%)p "%";;esac;else p "$x";fi;done;};a(){ P "$s" nnqsqn;exit 0;};_=<<"#define a"
+''';import sys,atexit;a,q,d,B=10,34,36,92;atexit.register(lambda:print(s%(a,a,q,s,q,a),end=''));'''
+#!perl
+sub n{10}sub Q{34}sub d{36}sub B{92}sub a{printf($s,n,n,Q,$s,Q,n);exit 0;}$
+#'''#*/
+#define a
+#define s char*z;int main(void){enum{q=34,d=36,B=92,n=10};printf(z,n,n,q,z,q,n);}char*z
+s="#define a%c#define s char*z;int main(void){enum{q=34,d=36,B=92,n=10};printf(z,n,n,q,z,q,n);}char*z%cs=%c%s%c;a%c";a

@@ -1,0 +1,10 @@
+#include<stdio.h>/*
+_='''';p(){ printf %s "$1";};c(){ p "$1"|cut -c "$2";};o(){ printf "\\$(printf %03o "$1")";};
+P(){ S=$1;T=$2;i=0;j=1;l=$(p "$S"|wc -c);while [ $i -lt $l ];do i=$((i+1));x=$(c "$S" $i);if [ "$x" = '%' ];then i=$((i+1));y=$(c "$S" $i);case $y in s)p "$S";j=$((j+1));;c)t=$(c "$T" $j);j=$((j+1));case $t in b)p '\';;q)p '"';;d)p '$';;n)o 10;;esac;;%)p '%';;esac;else p "$x";fi;done;};a(){ P "$s" dddqdqddddqdqdqdqddqdqddqdqddqdqdddbqdqdqqdqnnndddnnnnqsqn;exit 0;};_=<<'#define a'
+''';import sys,atexit;a,q,d,B=10,34,36,92;atexit.register(lambda:print(s%(d,d,d,q,d,q,d,d,d,d,q,d,q,d,q,d,q,d,d,q,d,q,d,d,q,d,q,d,d,q,d,q,d,d,d,B,q,d,q,d,q,q,d,q,a,a,a,d,d,d,a,a,a,a,q,s,q,a),end=''));'''
+#!perl
+sub n{10}sub Q{34}sub d{36}sub B{92}sub a{printf($s,d,d,d,Q,d,Q,d,d,d,d,Q,d,Q,d,Q,d,Q,d,d,Q,d,Q,d,d,Q,d,Q,d,d,Q,d,Q,d,d,d,B,Q,d,Q,d,Q,Q,d,Q,n,n,n,d,d,d,n,n,n,n,Q,$s,Q,n);exit 0;}$
+#'''#*/
+#define a
+#define s char*z;int main(void){enum{q=34,d=36,B=92,n=10};printf(z,d,d,d,q,d,q,d,d,d,d,q,d,q,d,q,d,q,d,d,q,d,q,d,d,q,d,q,d,d,q,d,q,d,d,d,B,q,d,q,d,q,q,d,q,n,n,n,d,d,d,n,n,n,n,q,z,q,n);}char*z
+s="P(){ S=%c1;T=%c2;i=0;j=1;l=%c(p %c%cS%c|wc -c);while [ %ci -lt %cl ];do i=%c((i+1));x=%c(c %c%cS%c %ci);if [ %c%cx%c = '%%' ];then i=%c((i+1));y=%c(c %c%cS%c %ci);case %cy in s)p %c%cS%c;j=%c((j+1));;c)t=%c(c %c%cT%c %cj);j=%c((j+1));case %ct in b)p '%c';;q)p '%c';;d)p '%c';;n)o 10;;esac;;%%)p '%%';;esac;else p %c%cx%c;fi;done;};a(){ P %c%cs%c dddqdqddddqdqdqdqddqdqddqdqddqdqdddbqdqdqqdqnnndddnnnnqsqn;exit 0;};_=<<'#define a'%c''';import sys,atexit;a,q,d,B=10,34,36,92;atexit.register(lambda:print(s%%(d,d,d,q,d,q,d,d,d,d,q,d,q,d,q,d,q,d,d,q,d,q,d,d,q,d,q,d,d,q,d,q,d,d,d,B,q,d,q,d,q,q,d,q,a,a,a,d,d,d,a,a,a,a,q,s,q,a),end=''));'''%c#!perl%csub n{10}sub Q{34}sub d{36}sub B{92}sub a{printf(%cs,d,d,d,Q,d,Q,d,d,d,d,Q,d,Q,d,Q,d,Q,d,d,Q,d,Q,d,d,Q,d,Q,d,d,Q,d,Q,d,d,d,B,Q,d,Q,d,Q,Q,d,Q,n,n,n,d,d,d,n,n,n,n,Q,%cs,Q,n);exit 0;}%c%c#'''#*/%c#define a%c#define s char*z;int main(void){enum{q=34,d=36,B=92,n=10};printf(z,d,d,d,q,d,q,d,d,d,d,q,d,q,d,q,d,q,d,d,q,d,q,d,d,q,d,q,d,d,q,d,q,d,d,d,B,q,d,q,d,q,q,d,q,n,n,n,d,d,d,n,n,n,n,q,z,q,n);}char*z%cs=%c%s%c;a%c";a

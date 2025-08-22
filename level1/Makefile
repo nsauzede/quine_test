@@ -5,6 +5,7 @@ RS:=rustc
 V:=v
 NELUA:=nelua
 CLISP:=sbcl --script
+JS:=node
 
 all:
 	@echo -n "C: " ; $(CC) -include stdio.h quine.c -o quine_c > /dev/null 2>&1 && (./quine_c > quine_c.c && (diff quine.c quine_c.c > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose"))||true
@@ -20,6 +21,7 @@ all:
 	@echo -n "V: " ; $(V) run quine.v > quine_v.v && diff quine.v quine_v.v > /dev/null 2>&1 && (echo "QUINE!!" || echo "You lose")||true
 	@echo -n "NELUA: " ; $(NELUA) quine.nelua > quine_nelua.nelua && (diff quine.nelua quine_nelua.nelua > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose")||true
 	@echo -n "CLISP: " ; $(CLISP) quine.lisp > quine_lisp.lisp && (diff quine.lisp quine_lisp.lisp > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose")||true
+	@echo -n "JS: " ; $(JS) quine.js > quine_js.js && (diff quine.js quine_js.js > /dev/null 2>&1 && echo "QUINE!!" || echo "You lose")||true
 
 clean:
 	@$(RM) quine_c quine_c.c
@@ -35,3 +37,4 @@ clean:
 	@$(RM) quine quine_v.v
 	@$(RM) quine quine_nelua.nelua
 	@$(RM) quine quine_lisp.lisp
+	@$(RM) quine quine_js.js

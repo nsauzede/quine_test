@@ -1,14 +1,14 @@
 clear
-Q=pqmini
+Q=pqmini4
 COPT="-x c -pedantic -Wall -Werror -std=c99"
 #COPT="-x c"
 for cc in tcc gcc clang; do
-    echo "cc=$cc"
+    #echo "cc=$cc"
     $cc ${COPT} ${Q}.txt >& /dev/null && (
         sh ${SHOPT} ${Q}.txt > out
         diff -q ${Q}.txt out > /dev/null && echo "---- $cc ${Q}_c.c QUINE! ----" || echo "---- `md5sum out` $cc ${Q}_c.c YOU LOOSE!!! ----"
         #diff -u ${Q}.txt out
-        cat out
+        #cat out
     )
 done
 
@@ -16,20 +16,20 @@ PYOPT="-x"
 python ${PYOPT} ${Q}.txt > out
 diff -q ${Q}.txt out >& /dev/null && echo "---- py QUINE! ----" || echo "---- `md5sum out` py YOU LOOSE!!! ----"
 #diff -u ${Q}.txt out
-cat out
+#cat out
 
 PLOPT="-x"
 perl ${PLOPT} ${Q}.txt > out
 diff -q ${Q}.txt out >& /dev/null && echo "---- pl QUINE! ----" || echo "---- `md5sum out` pl YOU LOOSE! ----"
 #diff -u ${Q}.txt out
-cat out
+#cat out
 
 SHOPT=""
 sh ${SHOPT} ${Q}.txt > out
 diff -q ${Q}.txt out >& /dev/null && echo "---- sh QUINE! ----" || echo "---- `md5sum out` sh YOU LOOSE!!! ----"
 #diff -u ${Q}.txt out
-cat out
+#cat out
 
 #gcc -pedantic -Wall -Werror -std=c99 -x c pqmini.txt&&diff -u pqmini.txt out
-diff -u ${Q}.txt out
+#diff -u ${Q}.txt out
 du -b ${Q}.txt
