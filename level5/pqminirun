@@ -13,16 +13,14 @@ done
 PYOPT="-x"
 diff -q ${Q}.txt <(python ${PYOPT} ${Q}.txt) >& /dev/null && echo "---- py QUINE! ----" || echo "---- py YOU LOOSE!!! ----"
 #diff -u ${Q}.txt <(python ${PYOPT} ${Q}.txt)
-#python ${PYOPT} ${Q}.txt
+python ${PYOPT} ${Q}.txt
 
 PLOPT="-x"
-#diff -q ${Q}.txt <(perl ${PLOPT} ${Q}.txt) >& /dev/null && echo "---- perl QUINE! ----" || echo "---- perl YOU LOOSE! ----"
-#diff -u ${Q}.txt <(perl ${PLOPT} ${Q}.txt)
-
 diff -q ${Q}.txt <(perl ${PLOPT} ${Q}.txt) >& /dev/null && echo "---- pl QUINE! ----" || echo "---- pl YOU LOOSE!!! ----"
+#diff -u ${Q}.txt <(perl ${PLOPT} ${Q}.txt)
 
 SHOPT=""
 diff -q ${Q}.txt <(sh ${SHOPT} ${Q}.txt) >& /dev/null && echo "---- sh QUINE! ----" || echo "---- sh YOU LOOSE!!! ----"
-diff -u ${Q}.txt <(sh ${SHOPT} ${Q}.txt)
+#diff -u ${Q}.txt <(sh ${SHOPT} ${Q}.txt)
 
 du -b ${Q}.txt
